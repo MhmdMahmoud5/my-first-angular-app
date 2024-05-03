@@ -1,0 +1,16 @@
+<p>user-name works!</p>
+
+<input type="text" class="form-control" [(ngModel)]="username" />
+<p>{{ username }}</p>
+<button class="btn btn-danger" [disabled]="!username" (click)="username = ''">
+  reset
+</button>
+<hr />
+<!-- <button class="btn btn-primary" (click)="showSecret= !showSecret">Display Details</button> -->
+<button class="btn btn-primary" (click)="onToggleDetails()">
+  Display Details
+</button>
+<p *ngIf="showSecret">secret=anything!</p>
+<div *ngFor="let logItem of log"
+[ngStyle]="{backgroundColor : logItem %2 ? 'blue' : 'red'}"
+[ngClass]="{odd:logItem%2}">{{ logItem }}</div>
